@@ -6,6 +6,7 @@ import zipfile
 import pytesseract
 import os
 
+pytesseract.pytesseract.tesseract_cmd = "/usr/bin/tesseract"
 app = Flask(__name__)
 app.secret_key = os.environ.get("SECRET_KEY", "change_this_in_prod")
 
