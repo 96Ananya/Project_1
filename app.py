@@ -6,7 +6,11 @@ import zipfile
 import pytesseract
 import os
 
-pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
+# Set tesseract path only on Windows
+if platform.system() == "Windows":
+    pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
+# On Linux (Render), Tesseract is in PATH automatically (from apt install)
+
 app = Flask(__name__)
 app.secret_key = os.environ.get("SECRET_KEY", "change_this_in_prod")
 
