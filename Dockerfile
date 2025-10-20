@@ -1,5 +1,5 @@
-# Use Python slim image
-FROM python:3.11-slim
+# Use Debian-based Python image (not slim)
+FROM python:3.11-bullseye
 
 # Install system deps and Tesseract OCR
 RUN apt-get update && apt-get install -y --no-install-recommends \
