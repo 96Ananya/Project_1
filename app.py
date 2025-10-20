@@ -9,7 +9,7 @@ import platform
 
 # Set tesseract path only on Windows
 if platform.system() == "Windows":
-    pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
+    pytesseract.pytesseract.tesseract_cmd = '/usr/bin/tesseract'
 # On Linux (Render), Tesseract is in PATH automatically (from apt install)
 
 app = Flask(__name__)
