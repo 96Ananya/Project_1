@@ -5,6 +5,7 @@ import io
 import zipfile
 import pytesseract
 import os
+import platform
 
 # Set tesseract path only on Windows
 if platform.system() == "Windows":
