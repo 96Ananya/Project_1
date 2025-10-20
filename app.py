@@ -6,17 +6,15 @@ import zipfile
 import pytesseract
 import os
 
-pytesseract.pytesseract.tesseract_cmd = "/usr/bin/tesseract"
+pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
 app = Flask(__name__)
 app.secret_key = os.environ.get("SECRET_KEY", "change_this_in_prod")
 
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'bmp', 'tif', 'tiff', 'webp'}
 
-
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
-
-
+    
 @app.route('/')
 def index():
     return render_template('index.html')
