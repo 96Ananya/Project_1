@@ -55,7 +55,7 @@
           </form>
 
           <!-- Show OCR result if present -->
-          {% if ocr_text is %}
+          {% if ocr_text is defined %}
           <hr>
           <h5>Extracted Text</h5>
           <form method="post" action="/download_text">
